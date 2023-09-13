@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2190491392252514689}
   - component: {fileID: 2680459833397100781}
-  - component: {fileID: 5239925049985888658}
   - component: {fileID: 1160266363700534257}
   - component: {fileID: 5437665640988981368}
+  - component: {fileID: 6930480613476965495}
   m_Layer: 6
-  m_Name: CoinObject
+  m_Name: HeartObject
   m_TagString: CanBePickedUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 313750343
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 341115669, guid: fe8a19246a356a94b8aeb3bd8189bb96, type: 3}
+  m_Sprite: {fileID: 1327709413, guid: fe8a19246a356a94b8aeb3bd8189bb96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,27 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5239925049985888658
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9130319721271375171}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be9556032ae82f547aa4a025e3f5debf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!58 &1160266363700534257
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -155,4 +134,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b6b3d96cbbe4a4e909091188473582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: ca0508d9fcd1274498991455594afc32, type: 2}
+  item: {fileID: 11400000, guid: 2a1efb9cac17dd946ab85ef994d6a554, type: 2}
+--- !u!95 &6930480613476965495
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9130319721271375171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c0f138622945b13408709a353447e7b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
