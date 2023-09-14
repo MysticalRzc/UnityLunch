@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Character
 {
@@ -33,5 +34,12 @@ public class Player : Character
     {
         hitPoints = hitPoints + amount;
         print("Adjusted hitpoints by: " + amount + ". New value: " + hitPoints);
+        GameObject obj = GameObject.FindGameObjectWithTag("meter");
+        if(obj != null)
+        {
+            Image img = obj.GetComponent<Image>();
+            img.fillAmount = (float)(hitPoints / (maxHitPoints + 0.0));
+            Debug.Log(obj.name + img.fillAmount);
+        }
     }
 }
