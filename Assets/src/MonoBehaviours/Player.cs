@@ -28,6 +28,7 @@ public class Player : Character
                 {
                     case Item.ItemType.COIN:
                         //shouldDisappear = inventory.AddItem(hitObject);
+                        collision.gameObject.SetActive(false);
                         break;
                     case Item.ItemType.HEALTH:
                         shouldDisappear = AdjustHitPoints(hitObject.quantity);
