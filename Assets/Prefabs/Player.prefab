@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -818217419
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -843171751, guid: 548c5229257b64e45a55338c0356db04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -213,3 +213,4 @@ MonoBehaviour:
   startingHitPoints: 6
   characterCategory: 0
   healthBarPrefab: {fileID: 1787174559441110480, guid: 3ae271d3c2fc9f14296a02c7c698f3ae, type: 3}
+  inventoryPrefab: {fileID: 2142042271609516475, guid: 8fa4e5dbcb2e3fd4eb9651f3e13f0d35, type: 3}

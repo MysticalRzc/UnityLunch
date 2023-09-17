@@ -5,13 +5,17 @@ using UnityEngine;
 public class Player : Character
 {
     public HealthBar healthBarPrefab;
+    public Inventory inventoryPrefab;
     HealthBar healthBar;
+    Inventory inventory;
 
     public void Start()
     {
         hitPoints.value = startingHitPoints;
         healthBar = Instantiate(healthBarPrefab);
         healthBar.character = this;
+        Debug.Log(inventory == null);
+        inventory = Instantiate(inventoryPrefab);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -27,8 +31,8 @@ public class Player : Character
                 switch (hitObject.itemType)
                 {
                     case Item.ItemType.COIN:
-                        //shouldDisappear = inventory.AddItem(hitObject);
-                        collision.gameObject.SetActive(false);
+                        shouldDisappear = inventory.AddItem(hitObject);
+                        shouldDisappear = true;
                         break;
                     case Item.ItemType.HEALTH:
                         shouldDisappear = AdjustHitPoints(hitObject.quantity);

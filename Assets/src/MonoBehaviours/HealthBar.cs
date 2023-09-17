@@ -23,7 +23,6 @@ public class HealthBar : MonoBehaviour
     {
         if (character != null)
         {
-            Debug.Log("Health Bar update" + hitPoints.value + " " + maxHitPoints);
             meterImage.fillAmount = hitPoints.value / maxHitPoints;
             hpText.text = "HP:" + (meterImage.fillAmount * 100);
         }
