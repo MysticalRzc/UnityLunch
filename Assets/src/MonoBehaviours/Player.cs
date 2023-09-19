@@ -14,7 +14,6 @@ public class Player : Character
         hitPoints.value = startingHitPoints;
         healthBar = Instantiate(healthBarPrefab);
         healthBar.character = this;
-        Debug.Log(inventory == null);
         inventory = Instantiate(inventoryPrefab);
     }
 
@@ -28,6 +27,7 @@ public class Player : Character
             {
                 bool shouldDisappear = false;
 
+                Debug.Log("hitObject.itemType" + hitObject.itemType);
                 switch (hitObject.itemType)
                 {
                     case Item.ItemType.COIN:
@@ -38,6 +38,8 @@ public class Player : Character
                         shouldDisappear = AdjustHitPoints(hitObject.quantity);
                         break;
                     default:
+                        shouldDisappear = inventory.AddItem(hitObject);
+                        shouldDisappear = true;
                         break;
                 }
 
