@@ -12,7 +12,7 @@ public class SpawnPoint : MonoBehaviour
     {
         if(repeatInterval > 0)
         {
-            InvokeRepeating("SpawnObject", 0.0f, repeatInterval);
+            InvokeRepeating("SpawnObject", 2.0f, repeatInterval);
         }
     }
 
@@ -20,6 +20,7 @@ public class SpawnPoint : MonoBehaviour
     {
         if(prefabToSpawn != null)
         {
+            Debug.Log("spawn object is running" + prefabToSpawn.name);
             //Quaternion 表示全传，identity无旋转
             return Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
         }

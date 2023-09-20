@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CanBePickedUp
+  - VirturalCamera
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
     locked: 0
   - name: ground
     uniqueID: 3671224539
+    locked: 0
+  - name: ground2
+    uniqueID: 1259746081
     locked: 0
   - name: objects
     uniqueID: 313750343
