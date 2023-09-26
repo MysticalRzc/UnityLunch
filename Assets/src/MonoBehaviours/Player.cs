@@ -15,6 +15,22 @@ public class Player : Character
         healthBar = Instantiate(healthBarPrefab);
         healthBar.character = this;
         inventory = Instantiate(inventoryPrefab);
+        Testaaa();
+    }
+
+    private void Update()
+    {
+        Testaaa(); 
+    }
+
+    private IEnumerator Testaaa()
+    {
+        while (true)
+        {
+            print("yield is running");
+            yield return new WaitForSeconds(1.0f);
+
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -61,5 +77,15 @@ public class Player : Character
         }
         print("didnt adjust hitpoints");
         return false;
+    }
+
+    public override void ResetCharacter()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override IEnumerator DamageCharacter(int damage, float interval)
+    {
+        throw new System.NotImplementedException();
     }
 }

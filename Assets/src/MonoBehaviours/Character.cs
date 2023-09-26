@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
     public HitPoints hitPoints;
     public float maxHitPoints;
@@ -14,4 +13,13 @@ public class Character : MonoBehaviour
         ENEMY
     }
     public CharacterCategory characterCategory;
+
+    public virtual void KillCharacter()
+    {
+        Destroy(gameObject);
+    }
+
+    public abstract void ResetCharacter();
+    public abstract IEnumerator DamageCharacter(int damage, float interval);
+
 }
