@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Character
@@ -8,29 +7,12 @@ public class Player : Character
     public Inventory inventoryPrefab;
     HealthBar healthBar;
     Inventory inventory;
-
     public void Start()
     {
         hitPoints.value = startingHitPoints;
         healthBar = Instantiate(healthBarPrefab);
         healthBar.character = this;
         inventory = Instantiate(inventoryPrefab);
-        Testaaa();
-    }
-
-    private void Update()
-    {
-        Testaaa(); 
-    }
-
-    private IEnumerator Testaaa()
-    {
-        while (true)
-        {
-            print("yield is running");
-            yield return new WaitForSeconds(1.0f);
-
-        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -43,7 +25,7 @@ public class Player : Character
             {
                 bool shouldDisappear = false;
 
-                Debug.Log("hitObject.itemType" + hitObject.itemType);
+                //Debug.Log("hitObject.itemType" + hitObject.itemType);
                 switch (hitObject.itemType)
                 {
                     case Item.ItemType.COIN:
@@ -72,20 +54,46 @@ public class Player : Character
         if (hitPoints.value < maxHitPoints)
         {
             hitPoints.value = hitPoints.value + amount;
-            print("Adjusted HP by: " + amount + ". New value: " + hitPoints.value);
+            //print("Adjusted HP by: " + amount + ". New value: " + hitPoints.value);
             return true;
         }
-        print("didnt adjust hitpoints");
+        //print("didnt adjust hitpoints");
         return false;
     }
-
+    public override void KillCharacter()
+    {
+        base.KillCharacter();
+        Destroy(healthBar.gameObject);
+        Destroy(inventory.gameObject);  
+    }
     public override void ResetCharacter()
     {
-        throw new System.NotImplementedException();
+        hitPoints.value = startingHitPoints;
+
+        healthBar = Instantiate(healthBarPrefab);
+        healthBar.character = this;
+        inventory = Instantiate(inventoryPrefab);
     }
 
-    public override IEnumerator DamageCharacter(int damage, float interval)
+    public override IEnumerator DemageCharater(float damage, float interval)
     {
-        throw new System.NotImplementedException();
+        while (true)
+        {
+            hitPoints.value = hitPoints.value - damage;
+            if (hitPoints.value <= float.Epsilon)
+            {
+                KillCharacter();
+                break;
+            }
+            if (interval > float.Epsilon)
+            {
+                yield return new WaitForSeconds(interval);
+            }
+            else
+            {
+                //如果伤害间隔为0，那么只计算一次（只攻击一次）
+                break;
+            }
+        }
     }
 }

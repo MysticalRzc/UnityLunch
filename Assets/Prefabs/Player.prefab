@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: -6156371343363211816}
   - component: {fileID: 1455245415149474497}
   - component: {fileID: -8838383943146312630}
+  - component: {fileID: 31248798869099071}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -818217419
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -843171751, guid: 548c5229257b64e45a55338c0356db04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  testNum: 3333
+  testNum: 122
 --- !u!50 &-6156371343363211816
 Rigidbody2D:
   serializedVersion: 4
@@ -214,3 +215,18 @@ MonoBehaviour:
   characterCategory: 0
   healthBarPrefab: {fileID: 1787174559441110480, guid: 3ae271d3c2fc9f14296a02c7c698f3ae, type: 3}
   inventoryPrefab: {fileID: 2142042271609516475, guid: 8fa4e5dbcb2e3fd4eb9651f3e13f0d35, type: 3}
+--- !u!114 &31248798869099071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4230116950487241600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4802894de66f1e4299504c79e0354e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoPrefab: {fileID: 3922420261259788328, guid: 5b63cf128cbb30d499c5571ed0128927, type: 3}
+  poolSize: 7
+  weaponVelocity: 2

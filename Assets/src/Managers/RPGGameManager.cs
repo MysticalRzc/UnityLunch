@@ -12,9 +12,12 @@ public class RPGGameManager : MonoBehaviour
     {
         if(playerSpawnPoint != null)
         {
-            Debug.Log("spawn is running" + playerSpawnPoint.name);
-            GameObject player = playerSpawnPoint.SpawnObject();
-            cameraManager.virtualCamera.Follow = player.transform;
+            GameObject playerRunning =  GameObject.FindGameObjectWithTag("player");
+            if (playerRunning == null)
+            {
+                GameObject player = playerSpawnPoint.SpawnObject();
+                cameraManager.virtualCamera.Follow = player.transform;
+            }
         }
     }
     private void Awake()
@@ -30,7 +33,6 @@ public class RPGGameManager : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log("RPG game manager is running");
         SetupScene();
     }
 
@@ -42,6 +44,6 @@ public class RPGGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SetupScene();
     }
 }

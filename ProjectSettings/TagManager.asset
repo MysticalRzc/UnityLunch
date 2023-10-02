@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CanBePickedUp
   - VirturalCamera
+  - player
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - objects
   - Enemy
   - Player
-  - 
+  - Ammo
   - 
   - 
   - 
@@ -60,4 +61,7 @@ TagManager:
     locked: 0
   - name: ui
     uniqueID: 3174109391
+    locked: 0
+  - name: Ammo
+    uniqueID: 754037595
     locked: 0

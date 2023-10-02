@@ -20,6 +20,6 @@ public abstract class Character : MonoBehaviour
     }
 
     public abstract void ResetCharacter();
-    public abstract IEnumerator DamageCharacter(int damage, float interval);
+    public abstract IEnumerator DemageCharater(float damage, float interval);
 
 }

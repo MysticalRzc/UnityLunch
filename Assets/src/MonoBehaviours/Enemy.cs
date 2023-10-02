@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    float hitPoint;
-
-    public override IEnumerator DamageCharacter(int damage, float interval)
+    public float hitPoint;
+    public float demageStrength;
+    public float demageFrequency;
+    Coroutine damageCoroutine;
+    public override IEnumerator DemageCharater(float damage, float interval)
     {
         while (true)
         {
@@ -30,5 +32,32 @@ public class Enemy : Character
     public override void ResetCharacter()
     {
        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("player"))
+        {
+            //Debug.Log("enemy collision is enter" + collision.gameObject.tag);
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (damageCoroutine == null)
+            {
+                damageCoroutine = StartCoroutine(player.DemageCharater(demageStrength, demageFrequency));
+            }
+        }
+    }
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("player"))
+        {
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (damageCoroutine != null)
+            {
+                StopCoroutine(damageCoroutine);
+                damageCoroutine = null;
+            }
+        }
     }
 }
