@@ -61,7 +61,7 @@ public class MovementController : MonoBehaviour
         }
 
         if (Input.GetMouseButtonDown(0))
-        {
+        {  
             animator.SetBool(IS_FIRE, true);
         }
         else
