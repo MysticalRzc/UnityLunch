@@ -5,43 +5,34 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     public float movementSpeed = 3.0f;
-    public float testNum = 3333f;
     Vector2 movement = new Vector2();
-
-    // 1
     Animator animator;
 
-    // 2
-    string animationState = "AnimationState";
     Rigidbody2D rb2D;
 
-    // 3
-    enum CharStates
-    {
-        walkEast = 1,
-        walkSouth = 2,
-        walkWest = 3,
-        walkNorth = 4,
+    //enum CharStates
+    //{
+    //    walkEast = 1,
+    //    walkSouth = 2,
+    //    walkWest = 3,
+    //    walkNorth = 4,
 
-        idleSouth = 5
-    }
+    //    idleSouth = 5
+    //}
 
     private void Start()
     {
-        // 4
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        // 5
         UpdateState();
     }
 
     void FixedUpdate()
     {
-        // 6
         MoveCharacter();
     }
 
@@ -50,33 +41,34 @@ public class MovementController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        // 7
         movement.Normalize();
         rb2D.velocity = movement * movementSpeed;
     }
 
+    string IS_WALKING = "isWalking";
+    string IS_FIRE = "isFiring";
+    string X_DIR = "xDir";
+    string Y_DIR = "yDir";
     private void UpdateState()
     {
-        // 8
-        if (movement.x > 0)
+        if (Mathf.Approximately(movement.x, 0) && Mathf.Approximately(movement.y, 0))
         {
-            animator.SetInteger(animationState, (int)CharStates.walkEast);
-        }
-        else if (movement.x < 0)
-        {
-            animator.SetInteger(animationState, (int)CharStates.walkWest);
-        }
-        else if (movement.y > 0)
-        {
-            animator.SetInteger(animationState, (int)CharStates.walkNorth);
-        }
-        else if (movement.y < 0)
-        {
-            animator.SetInteger(animationState, (int)CharStates.walkSouth);
+            animator.SetBool(IS_WALKING, false);
         }
         else
         {
-            animator.SetInteger(animationState, (int)CharStates.idleSouth);
+            animator.SetBool(IS_WALKING, true);
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetBool(IS_FIRE, true);
+        }
+        else
+        {
+            animator.SetBool(IS_FIRE, false);
+        }
+        animator.SetFloat(X_DIR, movement.x);
+        animator.SetFloat(Y_DIR, movement.y);
     }
 }
