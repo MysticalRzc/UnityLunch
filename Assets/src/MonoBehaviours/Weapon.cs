@@ -31,8 +31,6 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //isFiring = true;
-            Debug.Log("mouse is down");
             FireAmmo();
         }
         //UpdateState();
@@ -42,7 +40,6 @@ public class Weapon : MonoBehaviour
     {
         foreach (GameObject ammo in ammoPool)
         {
-            Debug.Log("is active:" + ammo.activeSelf);
             if (ammo.activeSelf == false)
             {
                 ammo.SetActive(true);
@@ -60,7 +57,6 @@ public class Weapon : MonoBehaviour
         if (ammo != null){
             Arc arcScript = ammo.GetComponent<Arc>();
             float travelDuration = 1.0f / weaponVelocity;
-            Debug.Log(arcScript == null);
             StartCoroutine(arcScript.TravelArc(mousePosition, travelDuration));
         }
     }

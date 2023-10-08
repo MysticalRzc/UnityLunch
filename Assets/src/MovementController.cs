@@ -49,6 +49,9 @@ public class MovementController : MonoBehaviour
     string IS_FIRE = "isFiring";
     string X_DIR = "xDir";
     string Y_DIR = "yDir";
+
+    string X_FIRE_DIR = "xFireDir";
+    string Y_FIRE_DIR = "yFireDir";
     private void UpdateState()
     {
         if (Mathf.Approximately(movement.x, 0) && Mathf.Approximately(movement.y, 0))
@@ -62,6 +65,9 @@ public class MovementController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            animator.SetFloat(X_FIRE_DIR, mousePosition.x - rb2D.position.x);
+            animator.SetFloat(Y_FIRE_DIR, mousePosition.y - rb2D.position.y);
             animator.SetBool(IS_FIRE, true);
         }
         else

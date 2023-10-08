@@ -6,13 +6,15 @@ public class Ammo : MonoBehaviour
 {
     public int demageInflicted;
     // Start is called before the first frame update
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision is BoxCollider2D)
+        Debug.Log("OnTriggerEnter2D is running" + collision.GetType());
+        if (collision is CircleCollider2D)
         {
+            Debug.Log("enemy demage is running");
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             StartCoroutine(enemy.DemageCharater(demageInflicted,0.0f));
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 

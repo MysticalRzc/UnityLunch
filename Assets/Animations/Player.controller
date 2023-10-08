@@ -198,8 +198,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: xDir
     m_Mirror: 0
-  m_BlendParameter: xDir
-  m_BlendParameterY: yDir
+  m_BlendParameter: xFireDir
+  m_BlendParameterY: yFireDir
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -352,6 +352,18 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: yDir
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: xFireDir
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: yFireDir
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
