@@ -127,7 +127,7 @@ MonoBehaviour:
   maxHitPoints: 10
   startingHitPoints: 5
   characterCategory: 1
-  hitPoint: 100
+  hitPoint: 10
   demageStrength: 0.2
   demageFrequency: 0.1
 --- !u!61 &8399032215353586587

@@ -212,8 +212,8 @@ MonoBehaviour:
   maxHitPoints: 10
   startingHitPoints: 6
   characterCategory: 0
-  healthBarPrefab: {fileID: 1763586502885759670, guid: 3ae271d3c2fc9f14296a02c7c698f3ae, type: 3}
-  inventoryPrefab: {fileID: 5776823679867371176, guid: 8fa4e5dbcb2e3fd4eb9651f3e13f0d35, type: 3}
+  healthBarPrefab: {fileID: 7424825511061262790, guid: 3ae271d3c2fc9f14296a02c7c698f3ae, type: 3}
+  inventoryPrefab: {fileID: 3588451543883435206, guid: 8fa4e5dbcb2e3fd4eb9651f3e13f0d35, type: 3}
 --- !u!114 &31248798869099071
 MonoBehaviour:
   m_ObjectHideFlags: 0

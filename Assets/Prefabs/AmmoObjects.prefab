@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d7bd8565fb366479712a09011e3489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  demageInflicted: 1
+  demageInflicted: 2
 --- !u!114 &-1169661595679459509
 MonoBehaviour:
   m_ObjectHideFlags: 0
